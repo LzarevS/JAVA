@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Disable all logging from Redisson -->
+    <logger name="org.redisson" level="OFF" />
+
+    <!-- Disable all other logging -->
+    <root level="OFF">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
