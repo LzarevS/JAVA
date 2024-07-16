@@ -1,0 +1,50 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Change set for creating the category table -->
+    <changeSet id="1" author="skillbox">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="category"/>
+            </not>
+        </preConditions>
+        <createTable tableName="category">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+
+    <!-- Change set for creating the news table -->
+    <changeSet id="2" author="skillbox">
+    <preConditions onFail="MARK_RAN">
+        <not>
+            <tableExists tableName="news"/>
+        </not>
+    </preConditions>
+    <createTable tableName="news">
+        <column name="id" type="BIGINT" autoIncrement="true">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="title" type="VARCHAR(255)"/>
+        <column name="text" type="TEXT"/>
+        <column name="date" type="TIMESTAMP"/>
+        <!-- Add column for category_id -->
+        <column name="category_id" type="BIGINT"/>
+    </createTable>
+</changeSet>
+
+
+    <!-- Add foreign key constraint to link with category table -->
+    <changeSet id="3" author="skillbox">
+        <addForeignKeyConstraint baseTableName="news" baseColumnNames="category_id"
+                                 constraintName="fk_news_category"
+                                 referencedTableName="category" referencedColumnNames="id"
+                                 onDelete="SET NULL" onUpdate="CASCADE"/>
+    </changeSet>
+
+</databaseChangeLog>
