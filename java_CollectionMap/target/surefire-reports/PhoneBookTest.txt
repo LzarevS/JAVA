@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: PhoneBookTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.089 s <<< FAILURE! - in PhoneBookTest
+PhoneBookTest.searchContactByName  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[Маша - 79001234567]> but was: <[]>
+	at PhoneBookTest.searchContactByName(PhoneBookTest.java:87)
+
+PhoneBookTest.addAndRewriteContact  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[Миша - 79001234567]> but was: <[]>
+	at PhoneBookTest.addAndRewriteContact(PhoneBookTest.java:60)
+
+PhoneBookTest.searchContactByNumber  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Маша - 79001234567> but was: <>
+	at PhoneBookTest.searchContactByNumber(PhoneBookTest.java:95)
+
+PhoneBookTest.addContactWithTwoNumbers  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[Маша - 79001234567, 79007654321]> but was: <[]>
+	at PhoneBookTest.addContactWithTwoNumbers(PhoneBookTest.java:78)
+
+PhoneBookTest.addingContactByName  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[Миша - 79991234567, Маша - 79001234567]> but was: <[]>
+	at PhoneBookTest.addingContactByName(PhoneBookTest.java:69)
+
