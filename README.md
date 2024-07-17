@@ -1,1 +1,1 @@
-Course Profession Java Developer
+Course Profession Java Developer SkillBox
